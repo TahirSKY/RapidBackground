@@ -1,0 +1,7 @@
+Flask>=2.0.1
+rembg>=2.0.55
+Pillow>=10.0.0
+python-dotenv>=1.0.0
+Werkzeug>=2.0.1
+onnxruntime>=1.15.0
+gunicorn>=21.2.0

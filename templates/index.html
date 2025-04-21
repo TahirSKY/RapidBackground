@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RapidBG - Background Removal Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .preview-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .preview-section {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        #progress-section {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RapidBG - Background Removal</h1>
+        
+        <!-- Upload Section -->
+        <div id="upload-section">
+            <input type="file" id="image-input" accept="image/*">
+            <button onclick="processImage()">Remove Background</button>
+        </div>
+
+        <!-- Progress Section -->
+        <div id="progress-section" style="display: none;">
+            <p>Processing image... Please wait.</p>
+        </div>
+
+        <!-- Preview Container -->
+        <div class="preview-container">
+            <!-- Input Preview -->
+            <div id="input-preview" class="preview-section" style="display: none;">
+                <h3>Original Image</h3>
+                <img id="input-image" alt="Original image">
+            </div>
+
+            <!-- Output Preview -->
+            <div id="output-preview" class="preview-section" style="display: none;">
+                <h3>Processed Image</h3>
+                <img id="output-image" alt="Processed image">
+                <div>
+                    <a id="download-link" download="processed.png">
+                        <button>Download Processed Image</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
