@@ -52,15 +52,26 @@
                 <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
                     <input type="checkbox" id="alpha-matting" title="Enable for better edge quality (slower processing)">
                     <span>High Quality Edge Processing</span>
-                    <span style="color: #666; font-size: 0.9em;">(slower)</span>
+                    <span style="color: #666; font-size: 0.9em;">(slower, best for images under 4MP)</span>
                 </label>
+            </div>
+            <div id="image-info" style="margin: 10px 0; color: #666; display: none;">
+                <p>Image size: <span id="image-dimensions"></span></p>
+                <p id="size-warning" style="color: #e67e22; display: none;">
+                    Large image detected. It will be automatically optimized for processing.
+                </p>
             </div>
             <button onclick="processImage()">Remove Background</button>
         </div>
 
         <!-- Progress Section -->
         <div id="progress-section" style="display: none;">
-            <p>Processing image... Please wait.</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                <p id="processing-status">Processing image... Please wait.</p>
+                <div class="progress-bar" style="width: 200px; height: 4px; background: #eee; border-radius: 2px;">
+                    <div id="progress-indicator" style="width: 0%; height: 100%; background: #4CAF50; border-radius: 2px; transition: width 0.3s;"></div>
+                </div>
+            </div>
         </div>
 
         <!-- Preview Container -->
