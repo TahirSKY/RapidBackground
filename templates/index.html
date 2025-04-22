@@ -48,6 +48,13 @@
         <!-- Upload Section -->
         <div id="upload-section">
             <input type="file" id="image-input" accept="image/*">
+            <div style="margin: 10px 0;">
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                    <input type="checkbox" id="alpha-matting" title="Enable for better edge quality (slower processing)">
+                    <span>High Quality Edge Processing</span>
+                    <span style="color: #666; font-size: 0.9em;">(slower)</span>
+                </label>
+            </div>
             <button onclick="processImage()">Remove Background</button>
         </div>
 

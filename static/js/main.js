@@ -38,10 +38,13 @@ async function processImage() {
     const formData = new FormData();
     formData.append('image', imageInput.files[0]);
 
+    // Get alpha matting preference
+    const useAlpha = document.getElementById('alpha-matting').checked;
+
     try {
         progressSection.style.display = 'block';
         
-        const response = await fetch('/process', {
+        const response = await fetch(`/process${useAlpha ? '?alpha=1' : ''}`, {
             method: 'POST',
             body: formData
         });
